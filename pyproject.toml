@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tree-sitter-logscale"
+description = "Tree-sitter parser for LogScale/CQL"
+version = "0.1.0"
+keywords = ["incremental", "parsing", "tree-sitter", "logscale"]
+classifiers = [
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Software Development :: Compilers",
+  "Topic :: Text Processing :: Linguistic",
+  "Typing :: Typed",
+]
+authors = [{ name = "Jake W. Ireland", email = "jakewilliami@icloud.com" }]
+requires-python = ">=3.9"
+license.text = "MIT"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/jakewilliami/tree-sitter-logscale"
+
+[project.optional-dependencies]
+core = ["tree-sitter~=0.22"]
+
+[tool.cibuildwheel]
+build = "cp39-*"
+build-frontend = "build"

@@ -1,0 +1,27 @@
+[package]
+name = "tree-sitter-logscale"
+description = "Tree-sitter parser for LogScale/CQL"
+version = "0.1.0"
+authors = ["Jake W. Ireland <jakewilliami@icloud.com>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["incremental", "parsing", "tree-sitter", "logscale"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/jakewilliami/tree-sitter-logscale"
+edition = "2021"
+autoexamples = false
+
+build = "bindings/rust/build.rs"
+include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.1.22"
+
+[dev-dependencies]
+tree-sitter = "0.24.3"
